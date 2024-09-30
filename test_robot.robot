@@ -20,4 +20,4 @@ GET /plus/-10/0
 Get On Session
     [Arguments]    ${url}
     ${response}    GET    ${url}
-    [Return]    ${response}
+    RETURN    ${response}
