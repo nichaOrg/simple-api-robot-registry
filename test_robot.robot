@@ -16,15 +16,15 @@ GET /plus/-10/0
     Should Contain    ${response.content.decode('utf-8')}    -10 + 0 = -10
 
 GET /is_prime/17
-    ${response}    GET    http://192.168.50.61:5000//is_prime/17
+    ${response}    GET    http://192.168.50.61:5000/is_prime/17
     Should Contain    ${response.content.decode('utf-8')}    true
 
 GET /is_prime/36
-    ${response}    GET    http://192.168.50.61:5000//is_prime/36
+    ${response}    GET    http://192.168.50.61:5000/is_prime/36
     Should Contain    ${response.content.decode('utf-8')}    false
 
 GET /is_prime/13219
-    ${response}    GET    http://192.168.50.61:5000//is_prime/13219
+    ${response}    GET    http://192.168.50.61:5000/is_prime/13219
     Should Contain    ${response.content.decode('utf-8')}    true
 
 GET /avr/10/5
