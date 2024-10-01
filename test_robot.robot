@@ -40,7 +40,15 @@ GET /power/3/2
 GET /power/2/-2
     ${response}    GET    http://192.168.50.61:5000/power/2/-2
     Should Contain    ${response.content.decode('utf-8')}    0.25
-    
+
+GET /multiply/5/5
+    ${response}    GET    http://192.168.50.61:5000/multiply/5/5
+    Should Contain    ${response.content.decode('utf-8')}    25
+
+GET /multiply/2/9
+    ${response}    GET    http://192.168.50.61:5000/multiply/2/9
+    Should Contain    ${response.content.decode('utf-8')}    18
+
 *** Keywords ***
 
 Get On Session
