@@ -30,6 +30,17 @@ GET /is_prime/13219
 GET /avg/10/5
     ${response}    GET    http://192.168.50.61:5000/avg/10/5
     Should Contain    ${response.content.decode('utf-8')}    7.5
+GET /power/2/0
+    ${response}    GET    http://192.168.50.61:5000/power/2/0
+    Should Contain    ${response.content.decode('utf-8')}    1
+GET /power/3/2
+    ${response}    GET    http://192.168.50.61:5000/power/3/2
+    Should Contain    ${response.content.decode('utf-8')}    9
+
+GET /power/2/-2
+    ${response}    GET    http://192.168.50.61:5000/power/2/-2
+    Should Contain    ${response.content.decode('utf-8')}    0.25
+    
 *** Keywords ***
 
 Get On Session
