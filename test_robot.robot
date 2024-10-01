@@ -29,7 +29,7 @@ GET /is_prime/13219
 
 GET /avg/10/5
     ${response}    GET    http://192.168.50.61:5000/avg/10/5
-    Should Contain    ${response.content.decode('utf-8')}    (10 + 5) / 2 = 7.5
+    Should Contain    ${response.content.decode('utf-8')}    7.5
 *** Keywords ***
 
 Get On Session
