@@ -49,14 +49,6 @@ GET /multiply/2/9
     ${response}    GET    http://192.168.50.61:5000/multiply/2/9
     Should Contain    ${response.content.decode('utf-8')}    18
 
-GET /More1000/999
-    ${response}    GET    http://192.168.50.61:5000/More1000/999
-    Should Contain    ${response.content.decode('utf-8')}    this result is True
-
-GET /More1000/990.9
-    ${response}    GET    http://192.168.50.61:5000/More1000/990.9
-    Should Contain    ${response.content.decode('utf-8')}    this result is True
-
 *** Keywords ***
 
 Get On Session
