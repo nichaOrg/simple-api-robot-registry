@@ -3,52 +3,17 @@ Library           RequestsLibrary
 
 *** Test Cases ***
 
-GET /plus/10/20
-    ${response}    GET    http://192.168.50.61:5000/plus/10/20
-    Should Contain    ${response.content.decode('utf-8')}    10 + 20 = 30
+GET /mul5/1
+    ${response}    GET    http://127.0.0.1:5000/mul5/1
+    Should Contain    ${response.content.decode('utf-8')}    5
 
-GET /plus/0/20.5
-    ${response}    GET    http://192.168.50.61:5000/plus/0/20
-    Should Contain    ${response.content.decode('utf-8')}    0 + 20 = 20
-
-GET /plus/-10/0
-    ${response}    GET    http://192.168.50.61:5000/plus/-10/0
-    Should Contain    ${response.content.decode('utf-8')}    -10 + 0 = -10
-
-GET /is_prime/17
-    ${response}    GET    http://192.168.50.61:5000/is_prime/17
-    Should Contain    ${response.content.decode('utf-8')}    true
-
-GET /is_prime/36
-    ${response}    GET    http://192.168.50.61:5000/is_prime/36
-    Should Contain    ${response.content.decode('utf-8')}    false
-
-GET /is_prime/13219
-    ${response}    GET    http://192.168.50.61:5000/is_prime/13219
-    Should Contain    ${response.content.decode('utf-8')}    true
-
-GET /avg/10/5
-    ${response}    GET    http://192.168.50.61:5000/avg/10/5
+GET /mul5/-10
+    ${response}    GET    http://127.0.0.1:5000/mul5/-10
+    Should Contain    ${response.content.decode('utf-8')}    -50
+GET /mul5/1.5
+    ${response}    GET    http://127.0.0.1:5000/mul5/1.5
     Should Contain    ${response.content.decode('utf-8')}    7.5
-GET /power/2/0
-    ${response}    GET    http://192.168.50.61:5000/power/2/0
-    Should Contain    ${response.content.decode('utf-8')}    1
-GET /power/3/2
-    ${response}    GET    http://192.168.50.61:5000/power/3/2
-    Should Contain    ${response.content.decode('utf-8')}    9
-
-GET /power/2/-2
-    ${response}    GET    http://192.168.50.61:5000/power/2/-2
-    Should Contain    ${response.content.decode('utf-8')}    0.25
-
-GET /multiply/5/5
-    ${response}    GET    http://192.168.50.61:5000/multiply/5/5
-    Should Contain    ${response.content.decode('utf-8')}    25
-
-GET /multiply/2/9
-    ${response}    GET    http://192.168.50.61:5000/multiply/2/9
-    Should Contain    ${response.content.decode('utf-8')}    18
-
+    
 *** Keywords ***
 
 Get On Session
